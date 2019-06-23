@@ -25,7 +25,7 @@ SECRET_KEY = '%02ph#j^#u8gawnob$tc$+6-xkx(e#+q=47@eazk(%q@rnmy1j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['repositoriodiplomado.herokuapp.com']
 
 
 # Application definition
