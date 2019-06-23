@@ -77,11 +77,23 @@ WSGI_APPLICATION = 'citasmedicas.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd7ko5mtq2r52q5',
+        'USER': 'hdwkjcniozohic',
+        'PASSWORD': 'b92f6ae230ff2528d3da825a62a6f800a4440b6465e3a8b0acb45bb96d3e9c61',
+        'HOST': 'ec2-174-129-242-183.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
+
+"""
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
