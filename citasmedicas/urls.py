@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from citasmedicas import settings
 from django.urls import path, include
 from django.contrib.auth.views import LogoutView, LoginView
 from citas.views import Viendocitas, Insertarcita, Editcita, Elicita
