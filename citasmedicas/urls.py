@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from citasmedicas import settings
+from django.views.generic import TemplateView
+
 from django.urls import path, include
 from django.contrib.auth.views import LogoutView, LoginView
 from citas.views import Viendocitas, Insertarcita, Editcita, Elicita
@@ -30,4 +32,4 @@ urlpatterns = [
 
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view()),
-]   +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
