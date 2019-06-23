@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertar Cita</title>
+</head>
+<body>
+    <h2> Insertando Cita </h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Editar">
+        <input type="button" onclick="location.href='/vercita'" value="Cancelar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viendo Citas</title>
+</head>
+<body>
+    <h2>Viendo Citas</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Tipo de Cita</td>
+                <td>Estado</td>
+                <td>Fecha</td>
+                <td>Costo</td>
+                <td>Pago</td>
+                <td>Medico</td>
+                <td>Paciente</td>
+                <td>Editar</td>
+                {% if perms.citas.del_citamedica %}
+                <td>Eliminar</td>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for citamedica in object_list %}
+                <tr>
+                    <td>{{ citamedica.id }}</td>
+                    <td>{{ citamedica.tipocita }}</td>
+                    <td>{{ citamedica.get_estado_display }}</td>
+                    <td>{{ citamedica.fecha }}</td>
+                    <td>{{ citamedica.costo }}</td>
+                    <td>{{ citamedica.get_pago_display }}</td>
+                    <td>{{ citamedica.medico }}</td>
+                    <td>{{ citamedica.paciente }}</td>
+                    <td> <input type="button" onclick="location.href='/editcita/{{ citamedica.id }}'"
+                                value="Editar"></td>
+                    {% if perms.citas.del_citamedica %}
+                    <td> <input type="button" onclick="location.href='/elicita/{{ citamedica.id }}'"
+                                value="Eliminar"></td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<input type="button" onclick="location.href='/insertarcita'" value="Agregar Cita">
+<input type="button"onclick="location.href='/logout'" value="Cerrar Sesión">
+</body>
+</html>
+{% endblock %}
